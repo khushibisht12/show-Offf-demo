@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Shopping Bag & Checkout - SHOWOFFFF</title>
+  
+  <link rel="shortcut icon" href="https://showoffff.in/cdn/shop/files/Showoffff_Website_Favicon_3afb335c-9833-480b-ab42-551e0bce6af6_96x96.webp?v=1731308273" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="component.css" />
+    <script src="products-data.js"></script>
+  <script src="sfmc-sitemap-datalayer.js"></script>
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/showoff/scripts/evergage.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="marquee-content-wrap">
+      <span class="announcement-star">â˜…</span>
+      <span class="announcement-text">EXTRA 15% OFF ON ORDERS ABOVE â‚¹1999 | CODE: <strong>EXTRA15</strong></span>
+      <span class="announcement-timer-badge" id="marquee-countdown">10:21:14</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <button class="header-icon-btn hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <a href="index.html" class="brand-logo-wrap" aria-label="SHOWOFFFF Home">
+        <span class="brand-logo-text">SHOWOFFFF</span>
+      </a>
+
+      <div class="header-right-actions">
+        <a href="wishlist.html" class="header-icon-btn" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="header-count-badge wishlist-count-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 60px; background-color: #fafbfc; min-height: 75vh;">
+    <div class="container">
+      <h1 style="font-size: 26px; font-weight: 900; color: #111827; margin-bottom: 24px;">Your Shopping Bag & Checkout</h1>
+
+      <!-- Free Shipping Banner -->
+      <div class="cart-shipping-banner" style="border-radius: 10px; margin-bottom: 24px; border: 1px solid #bfdbfe;">
+        <div id="full-cart-shipping-text" class="shipping-progress-text">Add <strong>â‚¹1499</strong> more for <strong>FREE SHIPPING</strong></div>
+        <div class="shipping-bar-track"><div id="full-cart-shipping-fill" class="shipping-bar-fill"></div></div>
+      </div>
+
+      <!-- Empty State -->
+      <div id="full-cart-empty" style="display: none; background: #fff; border-radius: 12px; padding: 60px 20px; text-align: center; border: 1px solid #e5e7eb;">
+        <div style="font-size: 54px; margin-bottom: 12px;">ðŸ‘œ</div>
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Your Shopping Bag is Empty</h2>
+        <p style="color: #6b7280; font-size: 14px; margin-bottom: 24px;">Explore top trendy styles from our Freedom Flash Sale.</p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <a href="women.html" class="primary-btn" style="padding: 12px 28px; background-color: #034ba9; color: #fff; border-radius: 8px; font-weight: 800;">Shop Women</a>
+          <a href="men.html" class="primary-btn" style="padding: 12px 28px; background-color: #111827; color: #fff; border-radius: 8px; font-weight: 800;">Shop Men</a>
+        </div>
+      </div>
+
+      <!-- Grid: Left Items & Form, Right Summary -->
+      <div id="full-cart-layout" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: start;">
+        
+        <!-- Left Column -->
+        <div>
+          <!-- Cart Items List -->
+          <div style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb; margin-bottom: 28px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">Items in Bag (<span id="full-cart-count">0</span>)</h3>
+            <div id="full-cart-items" style="display: flex; flex-direction: column; gap: 16px;"></div>
+          </div>
+
+          <!-- Shipping Details Form -->
+          <div style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb; margin-bottom: 28px;">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">1. Shipping & Delivery Address</h3>
+            <form id="checkout-address-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: #374151;">Full Name *</label>
+                <input type="text" id="cust-name" required placeholder="John Doe" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px;" />
+              </div>
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: #374151;">Mobile Number (10 Digits) *</label>
+                <input type="tel" id="cust-phone" required maxlength="10" placeholder="9876543210" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px;" />
+              </div>
+              <div style="grid-column: 1 / -1;">
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: #374151;">Flat / House No. / Building / Street *</label>
+                <input type="text" id="cust-address" required placeholder="Flat 402, Sunshine Heights" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px;" />
+              </div>
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: #374151;">Pincode *</label>
+                <input type="text" id="cust-pin" required maxlength="6" placeholder="400001" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px;" />
+              </div>
+              <div>
+                <label style="display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 4px; color: #374151;">City & State *</label>
+                <input type="text" id="cust-city" required placeholder="Mumbai, Maharashtra" style="width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px;" />
+              </div>
+            </form>
+          </div>
+
+          <!-- Payment Options -->
+          <div style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb;">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">2. Payment Method</h3>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <label style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1.5px solid #034ba9; border-radius: 8px; background: #eff6ff; cursor: pointer;">
+                <input type="radio" name="payment-method" value="COD" checked />
+                <span style="font-weight: 800; font-size: 13px;">Cash on Delivery (COD)</span>
+                <span style="margin-left: auto; font-size: 11.5px; color: #059669; font-weight: 700;">Pay at Doorstep</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer;">
+                <input type="radio" name="payment-method" value="UPI" />
+                <span style="font-weight: 800; font-size: 13px;">UPI (Google Pay / PhonePe / Paytm / QR)</span>
+                <span style="margin-left: auto; font-size: 11.5px; color: #034ba9; font-weight: 700;">Instant â‚¹100 Off</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer;">
+                <input type="radio" name="payment-method" value="CARD" />
+                <span style="font-weight: 800; font-size: 13px;">Credit / Debit Card / NetBanking</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Order Summary -->
+        <div style="position: sticky; top: 120px;">
+          <div style="background: #fff; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">Order Summary</h3>
+
+            <!-- Coupon Code Box -->
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+              <input type="text" id="full-coupon-input" placeholder="Coupon code (e.g. EXTRA15)" style="flex: 1; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 12.5px; outline: none;" />
+              <button type="button" id="btn-full-apply-coupon" style="padding: 10px 18px; background-color: #111827; color: #fff; font-size: 12.5px; font-weight: 800; border-radius: 6px;">Apply</button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: #4b5563; margin-bottom: 8px;">
+              <span>Subtotal</span>
+              <strong id="full-subtotal" style="color: #111827;">â‚¹0.00</strong>
+            </div>
+
+            <div id="full-discount-row" style="display: none; justify-content: space-between; font-size: 13.5px; color: #059669; font-weight: 700; margin-bottom: 8px;">
+              <span>Coupon Discount</span>
+              <strong id="full-discount-val">-â‚¹0.00</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 13.5px; color: #4b5563; margin-bottom: 14px;">
+              <span>Delivery Charges</span>
+              <strong style="color: #059669;">FREE</strong>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 900; color: #111827; padding-top: 14px; border-top: 1.5px dashed #e5e7eb; margin-bottom: 20px;">
+              <span>Total Amount</span>
+              <strong id="full-total" style="color: #034ba9;">â‚¹0.00</strong>
+            </div>
+
+            <button type="button" id="btn-place-order" class="primary-btn" style="width: 100%; height: 50px; background: linear-gradient(90deg, #ff5b00 0%, #ff3b00 100%); color: #fff; font-size: 15px; font-weight: 900; border-radius: 8px; box-shadow: 0 6px 20px rgba(255, 69, 0, 0.35);">
+              Place Order Now âž”
+            </button>
+
+            <span style="display: block; text-align: center; font-size: 11px; color: #9ca3af; margin-top: 12px;">ðŸ”’ Safe & Secure 256-Bit SSL Encrypted Checkout</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Success Screen Modal -->
+      <div id="order-success-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); z-index: 3000; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: #fff; border-radius: 16px; max-width: 480px; width: 100%; padding: 36px 24px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3);">
+          <div style="font-size: 56px; margin-bottom: 12px;">ðŸŽ‰</div>
+          <h2 style="font-size: 22px; font-weight: 900; color: #111827; margin-bottom: 8px;">Order Placed Successfully!</h2>
+          <p style="color: #4b5563; font-size: 13.5px; margin-bottom: 16px;">Thank you for shopping with SHOWOFFFF. Your order ID is <strong id="order-id-num" style="color: #034ba9;">#SHO-88492</strong></p>
+          <div style="background: #f9fafb; border-radius: 8px; padding: 14px; text-align: left; font-size: 12px; color: #4b5563; margin-bottom: 20px; line-height: 1.6;">
+            <p>â€¢ Estimated Delivery: <strong>3-4 Business Days</strong></p>
+            <p>â€¢ Tracking confirmation sent to your phone & email.</p>
+          </div>
+          <a href="index.html" class="primary-btn" style="display: block; padding: 12px; background: #034ba9; color: #fff; font-weight: 800; border-radius: 8px;">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col">
+          <h4 class="footer-heading">NEED HELP?</h4>
+          <ul class="footer-links-list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="returns.html">Returns & Exchanges</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">ABOUT US</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#heritage">Heritage since 1994</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">POLICIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns.html">Refund Policy</a></li>
+            <li><a href="faqs.html">Terms of Service</a></li>
+            <li><a href="faqs.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">CATEGORIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="women.html">Women's Collection</a></li>
+            <li><a href="men.html">Men's Collection</a></li>
+            <li><a href="curve.html">Curve & Plus Size</a></li>
+            <li><a href="top.html">Top Picks</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-info-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <p class="footer-contact-text"><a href="mailto:customercare@showoffclothes.com">customercare@showoffclothes.com</a></p>
+          <p class="footer-contact-text"><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p class="footer-contact-sub">Mon - Sat | 10:00 AM - 7:00 PM IST</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-brand-wrap">
+          <span class="footer-brand-text">SHOWOFFFF</span>
+          <span class="footer-copyright">Â© 2026 Showoffff Retail India Pvt. Ltd. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let cart = JSON.parse(localStorage.getItem('showoff_cart') || '[]');
+      let appliedCoupon = null;
+      const COUPONS = {
+        'EXTRA15': { type: 'percent', value: 15 },
+        'EXTRA10': { type: 'percent', value: 10 },
+        'FLASH50': { type: 'percent', value: 50 }
+      };
+
+      const emptyEl = document.getElementById('full-cart-empty');
+      const layoutEl = document.getElementById('full-cart-layout');
+      const itemsListEl = document.getElementById('full-cart-items');
+      const countEl = document.getElementById('full-cart-count');
+      const subtotalEl = document.getElementById('full-subtotal');
+      const discountRow = document.getElementById('full-discount-row');
+      const discountVal = document.getElementById('full-discount-val');
+      const totalEl = document.getElementById('full-total');
+      const shipFill = document.getElementById('full-cart-shipping-fill');
+      const shipText = document.getElementById('full-cart-shipping-text');
+
+      function renderCart() {
+        if (cart.length === 0) {
+          if (emptyEl) emptyEl.style.display = 'block';
+          if (layoutEl) layoutEl.style.display = 'none';
+          if (shipFill) shipFill.style.width = '0%';
+          if (shipText) shipText.innerHTML = 'Your cart is currently empty.';
+          return;
+        }
+
+        if (emptyEl) emptyEl.style.display = 'none';
+        if (layoutEl) layoutEl.style.display = 'grid';
+
+        const totalItems = cart.reduce((s, i) => s + i.quantity, 0);
+        if (countEl) countEl.textContent = totalItems;
+
+        const subtotal = cart.reduce((s, i) => s + (i.priceNum * i.quantity), 0);
+        let discount = 0;
+
+        if (appliedCoupon && COUPONS[appliedCoupon]) {
+          discount = (subtotal * COUPONS[appliedCoupon].value) / 100;
+        }
+
+        const finalTotal = Math.max(0, subtotal - discount);
+
+        // Free Shipping Progress
+        const diff = 1499 - subtotal;
+        if (diff <= 0) {
+          if (shipFill) shipFill.style.width = '100%';
+          if (shipText) shipText.innerHTML = 'ðŸŽ‰ You unlocked <strong>FREE SHIPPING!</strong>';
+        } else {
+          const pct = Math.min(100, Math.round((subtotal / 1499) * 100));
+          if (shipFill) shipFill.style.width = `${pct}%`;
+          if (shipText) shipText.innerHTML = `Add <strong>â‚¹${Math.round(diff)}</strong> more for <strong>FREE SHIPPING</strong>`;
+        }
+
+        if (itemsListEl) {
+          itemsListEl.innerHTML = cart.map(item => `
+            <div style="display: flex; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6; align-items: center;">
+              <img src="${item.image}" alt="${item.title}" style="width: 80px; height: 104px; object-fit: cover; border-radius: 8px;" />
+              <div style="flex: 1;">
+                <h4 style="font-size: 14px; font-weight: 800; color: #111827; margin-bottom: 4px;">${item.title}</h4>
+                <span style="font-size: 12px; color: #6b7280; display: block; margin-bottom: 6px;">Size: <strong>${item.size}</strong></span>
+                <span style="font-size: 15px; font-weight: 900; color: #111827;">â‚¹${item.priceNum.toLocaleString('en-IN')}.00</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="qty-control-box" style="height: 32px;">
+                  <button class="qty-btn btn-minus" data-id="${item.cartItemId}">âˆ’</button>
+                  <span class="qty-display">${item.quantity}</span>
+                  <button class="qty-btn btn-plus" data-id="${item.cartItemId}">+</button>
+                </div>
+                <button class="btn-remove" data-id="${item.cartItemId}" style="font-size: 12px; color: #e02424; font-weight: 700;">Remove</button>
+              </div>
+            </div>
+          `).join('');
+
+          itemsListEl.querySelectorAll('.btn-minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const id = btn.getAttribute('data-id');
+              const item = cart.find(i => i.cartItemId === id);
+              if (item) {
+                item.quantity--;
+                if (item.quantity <= 0) {
+                  cart = cart.filter(i => i.cartItemId !== id);
+                  if (window.showoffAnalytics && typeof window.showoffAnalytics.trackRemoveFromCart === 'function') {
+                    window.showoffAnalytics.trackRemoveFromCart(item);
+                  }
+                }
+                localStorage.setItem('showoff_cart', JSON.stringify(cart));
+                if (window.showoffAnalytics && typeof window.showoffAnalytics.syncCartFromStorage === 'function') {
+                  window.showoffAnalytics.syncCartFromStorage();
+                }
+                renderCart();
+              }
+            });
+          });
+
+          itemsListEl.querySelectorAll('.btn-plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const id = btn.getAttribute('data-id');
+              const item = cart.find(i => i.cartItemId === id);
+              if (item) {
+                item.quantity++;
+                localStorage.setItem('showoff_cart', JSON.stringify(cart));
+                if (window.showoffAnalytics && typeof window.showoffAnalytics.syncCartFromStorage === 'function') {
+                  window.showoffAnalytics.syncCartFromStorage();
+                }
+                renderCart();
+              }
+            });
+          });
+
+          itemsListEl.querySelectorAll('.btn-remove').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const id = btn.getAttribute('data-id');
+              const removedItem = cart.find(i => i.cartItemId === id);
+              cart = cart.filter(i => i.cartItemId !== id);
+              localStorage.setItem('showoff_cart', JSON.stringify(cart));
+              if (window.showoffAnalytics && typeof window.showoffAnalytics.trackRemoveFromCart === 'function' && removedItem) {
+                window.showoffAnalytics.trackRemoveFromCart(removedItem);
+              }
+              if (window.showoffAnalytics && typeof window.showoffAnalytics.syncCartFromStorage === 'function') {
+                window.showoffAnalytics.syncCartFromStorage();
+              }
+              renderCart();
+            });
+          });
+        }
+
+        if (subtotalEl) subtotalEl.textContent = `₹${subtotal.toLocaleString('en-IN')}.00`;
+        if (discount > 0 && discountRow && discountVal) {
+          discountRow.style.display = 'flex';
+          discountVal.textContent = `-₹${Math.round(discount).toLocaleString('en-IN')}.00 (${appliedCoupon})`;
+        } else if (discountRow) {
+          discountRow.style.display = 'none';
+        }
+        if (totalEl) totalEl.textContent = `₹${finalTotal.toLocaleString('en-IN')}.00`;
+      }
+
+      renderCart();
+
+      // Apply Coupon
+      const btnCoupon = document.getElementById('btn-full-apply-coupon');
+      const couponInput = document.getElementById('full-coupon-input');
+      if (btnCoupon && couponInput) {
+        btnCoupon.addEventListener('click', function() {
+          const code = couponInput.value.trim().toUpperCase();
+          if (COUPONS[code]) {
+            appliedCoupon = code;
+            renderCart();
+            alert(`Coupon "${code}" applied successfully!`);
+          } else {
+            alert('Invalid coupon. Try EXTRA15 or EXTRA10');
+          }
+        });
+      }
+
+      // Place Order Simulation
+      const btnPlaceOrder = document.getElementById('btn-place-order');
+      const modal = document.getElementById('order-success-modal');
+      const orderIdEl = document.getElementById('order-id-num');
+
+      if (btnPlaceOrder && modal) {
+        btnPlaceOrder.addEventListener('click', function() {
+          const name = (document.getElementById('cust-name') || {}).value || '';
+          const phone = (document.getElementById('cust-phone') || {}).value || '';
+          const addr = (document.getElementById('cust-address') || {}).value || '';
+          const pin = (document.getElementById('cust-pin') || {}).value || '';
+
+          if (!name || !phone || !addr || !pin) {
+            alert('Please fill out all required delivery address fields.');
+            return;
+          }
+
+          const randomId = Math.floor(10000 + Math.random() * 90000);
+          const orderId = `#SHO-${randomId}`;
+          if (orderIdEl) orderIdEl.textContent = orderId;
+
+          const purchasedCart = [...cart];
+          const orderDetails = {
+            name: name,
+            phone: phone,
+            address: addr,
+            pincode: pin,
+            coupon: appliedCoupon
+          };
+
+          if (window.showoffAnalytics && typeof window.showoffAnalytics.trackPurchase === 'function') {
+            window.showoffAnalytics.trackPurchase(orderId, orderDetails, purchasedCart);
+          }
+
+          // Clear Cart
+          localStorage.removeItem('showoff_cart');
+          cart = [];
+          if (window.showoffAnalytics && typeof window.showoffAnalytics.syncCartFromStorage === 'function') {
+            window.showoffAnalytics.syncCartFromStorage();
+          }
+          modal.style.display = 'flex';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

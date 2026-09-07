@@ -1,0 +1,343 @@
+%%[
+/* ==========================================================================
+   SHOWOFFFF - SALESFORCE MARKETING CLOUD (SFMC) CART ABANDONMENT EMAIL
+   ========================================================================== */
+
+VAR @fname, @jsonData, @rows, @rowCount, @i, @row, @shownProducts
+VAR @productName, @productPrice, @productUrl, @productImageUrl, @productCategory
+
+SET @shownProducts = ""
+
+SET @fname    = AttributeValue("firstname")
+SET @jsonData = AttributeValue("Trigger_Catalog_Items")
+
+IF EMPTY(@fname) THEN
+  SET @fname = "there"
+ENDIF
+
+IF NOT EMPTY(@jsonData) THEN
+  SET @rows     = BuildRowsetFromJSON(@jsonData, "$[*]", 1)
+  SET @rowCount = RowCount(@rows)
+ELSE
+  SET @rowCount = 0
+ENDIF
+
+]%%
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>SHOWOFFFF - You Left Something in Your Bag</title>
+
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap');
+
+    ReadMsgBody { width: 100%; }
+    .ExternalClass { width: 100%; }
+    .ExternalClass, .ExternalClass p, .ExternalClass span,
+    .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+    
+    body { 
+      margin: 0; 
+      padding: 0; 
+      background-color: #f1f5f9; 
+      -webkit-text-size-adjust: 100%; 
+      -ms-text-size-adjust: 100%;
+      font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif; 
+    }
+    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; outline: none; text-decoration: none; display: block; -ms-interpolation-mode: bicubic; }
+    a img { border: none; }
+    
+    .container { width: 560px; max-width: 560px; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .product-img { display: block !important; width: 140px !important; height: 160px !important; border-radius: 8px; object-fit: cover; }
+    
+    @media only screen and (max-width: 580px) {
+      .container { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+      .product-img { width: 110px !important; height: 130px !important; }
+      .product-content-td { padding-left: 12px !important; }
+      .header-logo-text { font-size: 24px !important; }
+      .hero-title { font-size: 20px !important; }
+    }
+  </style>
+
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td { font-family: Arial, Helvetica, sans-serif !important; }
+  </style>
+  <![endif]-->
+</head>
+
+<body bgcolor="#f1f5f9" style="margin:0;padding:20px 0;background-color:#f1f5f9;">
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f1f5f9">
+<tr>
+  <td align="center" style="padding: 10px 12px 30px;">
+    
+    <!-- ══ MAIN CONTAINER ══ -->
+    <table class="container" width="560" border="0" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;">
+
+      <!-- PREHEADER & VIEW IN BROWSER -->
+      <tr>
+        <td align="center" bgcolor="#034ba9" style="padding:8px 20px;font-size:11px;color:#dbeafe;letter-spacing:0.5px;">
+          ⚡ FLASH SALE: Get FLAT 50% OFF on your bag with code <strong>FLASH50</strong> &nbsp;|&nbsp; 
+          <a href="%%view_email_url%%" alias="View in Browser" style="color:#ffffff;text-decoration:underline;">View Online</a>
+        </td>
+      </tr>
+
+      <!-- ══ HEADER / BRAND LOGO ══ -->
+      <tr>
+        <td align="center" bgcolor="#034ba9" style="padding:28px 20px 24px;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td align="center">
+                <a href="https://show-offf-demo.vercel.app" style="text-decoration:none;">
+                  <span class="header-logo-text" style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:28px;font-weight:900;letter-spacing:4px;color:#ffffff;text-transform:uppercase;">SHOWOFFFF</span>
+                </a>
+                <div style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;color:#93c5fd;text-transform:uppercase;margin-top:4px;">
+                  ONLINE FASHION INDIA
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ══ HERO / GREETING SECTION ══ -->
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding:32px 30px 20px;border-bottom:1px solid #f1f5f9;">
+          <div style="display:inline-block;background:#eff6ff;color:#034ba9;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px;">
+            🛍️ Items Reserved in Your Bag
+          </div>
+          <div class="hero-title" style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:23px;font-weight:900;color:#0f172a;line-height:1.35;">
+            Hey <strong style="color:#034ba9;">%%=v(@fname)=%%</strong>, you left something stylish behind!
+          </div>
+          <div style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:14px;color:#475569;line-height:1.65;padding-top:10px;">
+            Your handpicked favorites are sitting in your shopping bag, but high-demand pieces sell out fast. Complete your order now and take advantage of our exclusive flash discount before stock runs out!
+          </div>
+
+          <!-- COUPON HIGHLIGHT BOX -->
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top:18px;background:#f8fafc;border:1.5px dashed #034ba9;border-radius:8px;">
+            <tr>
+              <td align="center" style="padding:12px 16px;">
+                <span style="font-size:12px;font-weight:700;color:#475569;">USE PROMO CODE AT CHECKOUT:</span>
+                <div style="font-size:18px;font-weight:900;color:#034ba9;letter-spacing:2px;margin-top:2px;">FLASH50</div>
+                <span style="font-size:11px;color:#16a34a;font-weight:700;">✓ Extra 50% OFF Applied Instantly</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ══ PRODUCTS LIST (AMPSCRIPT DYNAMIC ROWSET) ══ -->
+      <tr>
+        <td bgcolor="#ffffff" style="padding:20px 24px 8px;">
+
+%%[
+IF @rowCount > 0 THEN
+
+  FOR @i = 1 TO @rowCount DO
+
+    SET @row             = Row(@rows, @i)
+    SET @productName     = Trim(Field(@row, "name"))
+    SET @productPrice    = Trim(Field(@row, "price"))
+    SET @productUrl      = Trim(Field(@row, "url"))
+    SET @productImageUrl = Trim(Field(@row, "imageUrl"))
+    SET @productCategory = Trim(Field(@row, "category"))
+
+    /* Clean Image URL strings */
+    SET @productImageUrl = Replace(@productImageUrl, '"', "")
+    SET @productImageUrl = Replace(@productImageUrl, "'", "")
+    SET @productImageUrl = Replace(@productImageUrl, " ", "%20")
+
+    /* Dedupe check */
+    IF NOT EMPTY(@productName) AND IndexOf(@shownProducts, @productName) == 0 THEN
+
+      SET @shownProducts = Concat(@shownProducts, @productName, "|")
+
+      IF EMPTY(@productPrice) OR @productPrice == "0" THEN
+        SET @productPrice = "999"
+      ENDIF
+
+      IF EMPTY(@productUrl) THEN
+        SET @productUrl = "https://show-offf-demo.vercel.app/cart.html"
+      ENDIF
+
+      IF EMPTY(@productImageUrl) OR IndexOf(Lowercase(@productImageUrl), "http") == 0 THEN
+        SET @productImageUrl = "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=600&q=80"
+      ENDIF
+
+      IF EMPTY(@productCategory) THEN
+        SET @productCategory = "SHOWOFFFF Exclusive"
+      ENDIF
+]%%
+
+          <!-- SINGLE PRODUCT ROW -->
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;">
+            <tr>
+              <td width="140" valign="top" style="padding:12px;">
+                <a href="%%=RedirectTo(@productUrl)=%%" target="_blank" style="text-decoration:none;">
+                  <img src="%%=v(@productImageUrl)=%%" width="140" height="160" border="0" alt="%%=v(@productName)=%%" class="product-img" style="display:block;width:140px;height:160px;border:0;border-radius:8px;object-fit:cover;" />
+                </a>
+              </td>
+              <td valign="middle" class="product-content-td" style="padding:16px 20px 16px 6px;">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#034ba9;padding-bottom:4px;">
+                      %%=v(@productCategory)=%%
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:15px;font-weight:800;line-height:1.4;color:#0f172a;">
+                      <a href="%%=RedirectTo(@productUrl)=%%" target="_blank" style="color:#0f172a;text-decoration:none;">
+                        %%=v(@productName)=%%
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;font-weight:900;color:#034ba9;padding-top:8px;">
+                      &#8377;%%=v(@productPrice)=%%
+                      <span style="font-size:12px;font-weight:600;color:#94a3b8;text-decoration:line-through;margin-left:6px;">&#8377;2,499</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top:12px;">
+                      <a href="%%=RedirectTo(@productUrl)=%%" target="_blank"
+                         style="display:inline-block;background:#034ba9;color:#ffffff;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:11px;font-weight:800;letter-spacing:0.8px;text-transform:uppercase;padding:8px 18px;border-radius:6px;text-decoration:none;">
+                        Complete My Look &rarr;
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+%%[   ENDIF ]%%
+%%[ NEXT @i ]%%
+
+%%[ ELSE ]%%
+
+          <!-- FALLBACK IF NO ITEMS IN PAYLOAD -->
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding:20px;text-align:center;background:#f8fafc;border-radius:10px;margin-bottom:14px;">
+            <tr>
+              <td align="center">
+                <div style="font-size:15px;font-weight:700;color:#0f172a;">Your favorite styles are waiting!</div>
+                <div style="font-size:13px;color:#64748b;margin-top:4px;">Visit SHOWOFFFF to explore today's freshest drops.</div>
+              </td>
+            </tr>
+          </table>
+
+%%[ ENDIF ]%%
+
+        </td>
+      </tr>
+
+      <!-- ══ PRIMARY CHECKOUT CTA BUTTON ══ -->
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding:16px 24px 32px 24px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td align="center">
+                <a href="https://show-offf-demo.vercel.app/cart.html"
+                   alias="Return to Shopping Bag"
+                   target="_blank"
+                   style="display:block;
+                          background-color:#0f172a;
+                          color:#ffffff;
+                          font-family:'Plus Jakarta Sans',Arial,sans-serif;
+                          font-size:14px;
+                          font-weight:800;
+                          letter-spacing:1.5px;
+                          text-transform:uppercase;
+                          text-decoration:none;
+                          padding:16px 32px;
+                          border-radius:8px;
+                          box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+                          mso-padding-alt:16px 32px;">
+                  <!--[if mso]><i style="letter-spacing:32px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
+                  RETURN TO BAG &amp; CHECKOUT &rarr;
+                  <!--[if mso]><i style="letter-spacing:32px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ══ TRUST BADGES STRIP ══ -->
+      <tr>
+        <td bgcolor="#f8fafc" style="padding:20px 16px;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="33%" align="center" style="font-size:11px;font-weight:700;color:#334155;line-height:1.4;">
+                🚚 <strong>Free Shipping</strong><br><span style="color:#64748b;font-weight:500;">Above &#8377;1199</span>
+              </td>
+              <td width="34%" align="center" style="font-size:11px;font-weight:700;color:#334155;line-height:1.4;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
+                🔄 <strong>Easy Returns</strong><br><span style="color:#64748b;font-weight:500;">7-Day Policy</span>
+              </td>
+              <td width="33%" align="center" style="font-size:11px;font-weight:700;color:#334155;line-height:1.4;">
+                🔒 <strong>100% Secure</strong><br><span style="color:#64748b;font-weight:500;">Safe Payments</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ══ FOOTER EXPLORE ══ -->
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding:28px 20px 16px;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:14px;color:#334155;">
+          Explore the new collection on 
+          <a href="https://show-offf-demo.vercel.app" target="_blank" style="color:#034ba9;font-weight:800;text-decoration:none;">show-offf-demo.vercel.app</a>
+        </td>
+      </tr>
+
+      <!-- ══ SOCIAL LINKS ══ -->
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="padding:6px 20px 20px;">
+          <table cellpadding="0" cellspacing="0" align="center" border="0">
+            <tr>
+              <td style="padding:0 8px;">
+                <a href="https://instagram.com" target="_blank" alias="Instagram">
+                  <img src="https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/0e6fddf1-c205-4752-ad42-e9dc03c83dea.png" alt="Instagram" width="24" height="24" style="display:block;width:24px;height:24px;" />
+                </a>
+              </td>
+              <td style="padding:0 8px;">
+                <a href="https://youtube.com" target="_blank" alias="YouTube">
+                  <img src="https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/287abafd-6473-47a9-b05b-30526dc265fd.png" alt="YouTube" width="24" height="24" style="display:block;width:24px;height:24px;" />
+                </a>
+              </td>
+              <td style="padding:0 8px;">
+                <a href="https://facebook.com" target="_blank" alias="Facebook">
+                  <img src="https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/1a560d12-c8d7-40cb-9e90-9df36933fdfa.png" alt="Facebook" width="24" height="24" style="display:block;width:24px;height:24px;" />
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ══ SFMC LEGAL & COMPLIANCE FOOTER ══ -->
+      <tr>
+        <td align="center" bgcolor="#f8fafc" style="padding:16px 24px 24px;border-top:1px solid #e2e8f0;">
+          <div style="font-size:10px;color:#94a3b8;line-height:1.6;text-align:center;">
+            * Limited period offer. Promotional codes are applicable as per terms and conditions.<br>
+            This email was sent to you because you added items to your bag at <strong>SHOWOFFFF</strong>.<br><br>
+            Sent by: <b>%%Member_Busname%%</b><br>
+            %%Member_Addr%%, %%Member_City%%, %%Member_State%% %%Member_PostalCode%%, %%Member_Country%%<br><br>
+            <a href="%%unsub_center_url%%" alias="Unsubscribe" style="color:#64748b;text-decoration:underline;">Unsubscribe</a> &nbsp;|&nbsp; 
+            <a href="https://show-offf-demo.vercel.app/shipping-policy.html" style="color:#64748b;text-decoration:underline;">Privacy Policy</a>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+    <!-- ══ END CONTAINER ══ -->
+
+  </td>
+</tr>
+</table>
+
+</body>
+</html>

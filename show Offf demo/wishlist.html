@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>My Wishlist â¤ï¸ - SHOWOFFFF</title>
+  <meta name="description" content="View your saved favourite fashion items on SHOWOFFFF. Fast checkout, easy returns, and free delivery." />
+  
+  <link rel="shortcut icon" href="https://showoffff.in/cdn/shop/files/Showoffff_Website_Favicon_3afb335c-9833-480b-ab42-551e0bce6af6_96x96.webp?v=1731308273" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="component.css" />
+    <script src="products-data.js"></script>
+  <script src="sfmc-sitemap-datalayer.js"></script>
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/showoff/scripts/evergage.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="marquee-content-wrap">
+      <span class="announcement-star">â˜…</span>
+      <span class="announcement-text">SAVED FAVORITES: USE CODE <strong>FLASH50</strong> AT CHECKOUT</span>
+      <span class="announcement-timer-badge" id="marquee-countdown">10:21:14</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <button class="header-icon-btn hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <a href="index.html" class="brand-logo-wrap" aria-label="SHOWOFFFF Home">
+        <span class="brand-logo-text">SHOWOFFFF</span>
+      </a>
+
+      <div class="header-right-actions">
+        <button class="header-icon-btn search-open-trigger" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <button class="header-icon-btn cart-open-trigger" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="header-count-badge cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Nav Pills -->
+    <nav class="category-nav-bar" aria-label="Category Navigation">
+      <div class="category-pills-wrap">
+        <a href="women.html" class="nav-pill-btn">FOR HER</a>
+        <a href="men.html" class="nav-pill-btn">FOR HIM</a>
+        <a href="curve.html" class="nav-pill-btn">CURVE</a>
+        <a href="top.html" class="nav-pill-btn">TOP</a>
+        <a href="bestsellers.html" class="nav-pill-btn">BEST SELLER</a>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding: 40px 0 60px; min-height: 70vh;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div>
+          <h1 style="font-size: 26px; font-weight: 900; color: #111827;">My Wishlist</h1>
+          <span style="font-size: 13px; color: #6b7280;">Saved items (<span id="wishlist-total-num">0</span>)</span>
+        </div>
+        <button type="button" id="btn-clear-wishlist" style="font-size: 12px; color: #e02424; font-weight: 700; text-decoration: underline;">Clear Wishlist</button>
+      </div>
+
+      <!-- Wishlist Empty State -->
+      <div id="page-wishlist-empty" style="display: none; background: #fafbfc; border-radius: 12px; padding: 60px 20px; text-align: center; border: 1px solid #e5e7eb;">
+        <div style="font-size: 54px; margin-bottom: 12px;">ðŸ’—</div>
+        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">Your Wishlist is Empty</h2>
+        <p style="color: #6b7280; font-size: 14px; margin-bottom: 24px;">Save the styles you love by clicking the heart icon on any product.</p>
+        <a href="index.html" class="primary-btn" style="padding: 12px 30px; background-color: #034ba9; color: #fff; border-radius: 8px; font-weight: 800;">Start Exploring</a>
+      </div>
+
+      <!-- Wishlist Products Grid -->
+      <div id="page-wishlist-grid" class="product-grid"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col">
+          <h4 class="footer-heading">NEED HELP?</h4>
+          <ul class="footer-links-list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="returns.html">Returns & Exchanges</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">ABOUT US</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#heritage">Heritage since 1994</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html#careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">POLICIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns.html">Refund Policy</a></li>
+            <li><a href="faqs.html">Terms of Service</a></li>
+            <li><a href="faqs.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">CATEGORIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="women.html">Women's Collection</a></li>
+            <li><a href="men.html">Men's Collection</a></li>
+            <li><a href="curve.html">Curve & Plus Size</a></li>
+            <li><a href="top.html">Top Picks</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-info-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <p class="footer-contact-text"><a href="mailto:customercare@showoffclothes.com">customercare@showoffclothes.com</a></p>
+          <p class="footer-contact-text"><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p class="footer-contact-sub">Mon - Sat | 10:00 AM - 7:00 PM IST</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="footer-brand-wrap">
+          <span class="footer-brand-text">SHOWOFFFF</span>
+          <span class="footer-copyright">Â© 2026 Showoffff Retail India Pvt. Ltd. All rights reserved.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawers & Modals -->
+  <div id="app-backdrop" class="drawer-backdrop"></div>
+  <aside id="cart-drawer" class="drawer-panel cart-drawer">
+    <div class="drawer-header"><h3 class="drawer-title">Your Bag</h3><button id="cart-close-btn" class="drawer-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+    <div class="cart-shipping-banner"><div id="shipping-progress-text" class="shipping-progress-text">Add <strong>â‚¹1499</strong> more for <strong>FREE SHIPPING</strong></div><div class="shipping-bar-track"><div id="shipping-bar-fill" class="shipping-bar-fill"></div></div></div>
+    <div id="cart-items-list" class="cart-items-container"></div>
+    <div id="cart-empty-state" class="cart-empty-state" style="display:none;"><div class="empty-icon">ðŸ‘œ</div><h4 class="empty-heading">Your bag is empty</h4><p class="empty-desc">Explore styles!</p><button type="button" class="primary-btn" data-dismiss-cart="true">Shop Now</button></div>
+    <div class="cart-footer">
+      <div class="coupon-box"><input id="promo-input" type="text" placeholder="Enter coupon code" /><button id="btn-apply-promo" type="button">Apply</button></div>
+      <div class="cart-summary-row"><span>Subtotal</span><strong id="cart-subtotal">â‚¹0.00</strong></div>
+      <div id="cart-discount-row" class="cart-summary-row discount-row" style="display:none;"><span>Discount</span><strong id="cart-discount-val">-â‚¹0.00</strong></div>
+      <div class="cart-summary-row total-row"><span>Total</span><strong id="cart-total">â‚¹0.00</strong></div>
+      <a href="cart.html" class="checkout-btn" style="display:block; text-align:center;">Proceed to Checkout âž”</a>
+    </div>
+  </aside>
+
+  <aside id="mobile-nav-drawer" class="drawer-panel mobile-nav-drawer">
+    <div class="drawer-header"><h3 class="drawer-title">SHOWOFFFF</h3><button id="mobile-nav-close-btn" class="drawer-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+    <nav class="mobile-nav-menu">
+      <a href="index.html">Home ðŸ”¥</a>
+      <a href="women.html">For Her</a>
+      <a href="men.html">For Him</a>
+      <a href="curve.html">Curve & Plus Size</a>
+      <a href="top.html">Top Picks</a>
+      <a href="bestsellers.html">Bestsellers</a>
+      <a href="wishlist.html">Wishlist â¤ï¸</a>
+      <a href="cart.html">Shopping Bag ðŸ›ï¸</a>
+      <a href="track-order.html">Track My Order</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Support</a>
+    </nav>
+  </aside>
+
+  <div id="search-modal" class="search-modal">
+    <div class="search-modal-inner">
+      <div class="search-modal-top"><h3>Search Showoffff</h3><button id="search-modal-close-btn" class="drawer-close-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+      <div class="search-modal-input-wrap"><input id="search-modal-input" class="search-modal-input" type="search" placeholder="Search..." /></div>
+      <div id="search-results-grid" class="search-results-grid"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let wl = JSON.parse(localStorage.getItem('showoff_wishlist') || '[]');
+      const grid = document.getElementById('page-wishlist-grid');
+      const empty = document.getElementById('page-wishlist-empty');
+      const count = document.getElementById('wishlist-total-num');
+      const btnClear = document.getElementById('btn-clear-wishlist');
+
+      function renderWishlist() {
+        if (count) count.textContent = wl.length;
+
+        if (wl.length === 0) {
+          if (empty) empty.style.display = 'block';
+          if (grid) grid.innerHTML = '';
+          return;
+        }
+
+        if (empty) empty.style.display = 'none';
+
+        if (grid) {
+          grid.innerHTML = wl.map(p => `
+            <div class="product-card" data-product-id="${p.id}">
+              <div class="card-media">
+                <a href="product.html?id=${p.id}">
+                  <img src="${p.images ? p.images[0] : ''}" alt="${p.title}" class="card-img-primary" />
+                </a>
+              </div>
+              <div class="card-content">
+                <a href="product.html?id=${p.id}"><h3 class="card-title">${p.title}</h3></a>
+                <div class="card-prices-row">
+                  <span class="price-sale">${p.salePrice}</span>
+                  <span class="price-regular">${p.regPrice}</span>
+                  <span class="price-discount-percent">${p.discount || '64% OFF'}</span>
+                </div>
+                <div style="display: flex; gap: 8px; margin-top: auto;">
+                  <button type="button" class="btn-wl-page-move" data-id="${p.id}" style="flex:1; padding:8px; background:#034ba9; color:#fff; font-weight:800; font-size:12px; border-radius:6px;">Move to Bag</button>
+                  <button type="button" class="btn-wl-page-del" data-id="${p.id}" style="padding:8px; background:#f3f4f6; color:#e02424; font-weight:700; font-size:12px; border-radius:6px;">✖</button>
+                </div>
+              </div>
+            </div>
+          `).join('');
+
+          grid.querySelectorAll('.btn-wl-page-move').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const id = btn.getAttribute('data-id');
+              const item = wl.find(i => i.id === id);
+              if (item) {
+                // Add to cart
+                let cart = JSON.parse(localStorage.getItem('showoff_cart') || '[]');
+                cart.push({
+                  cartItemId: `${item.id}_M`,
+                  productId: item.id,
+                  title: item.title,
+                  size: 'M',
+                  priceNum: item.saleNum || 999,
+                  compareNum: item.regNum || 2499,
+                  image: item.images ? item.images[0] : '',
+                  quantity: 1
+                });
+                localStorage.setItem('showoff_cart', JSON.stringify(cart));
+                if (window.showoffAnalytics && typeof window.showoffAnalytics.trackAddToCart === 'function') {
+                  window.showoffAnalytics.trackAddToCart(item, 1, 'M');
+                }
+                if (window.showoffAnalytics && typeof window.showoffAnalytics.syncCartFromStorage === 'function') {
+                  window.showoffAnalytics.syncCartFromStorage();
+                }
+                wl = wl.filter(i => i.id !== id);
+                localStorage.setItem('showoff_wishlist', JSON.stringify(wl));
+                if (window.showoffAnalytics && typeof window.showoffAnalytics.trackRemoveFromWishlist === 'function') {
+                  window.showoffAnalytics.trackRemoveFromWishlist(item);
+                }
+                renderWishlist();
+                alert('Moved item to Bag! 🛍️');
+              }
+            });
+          });
+
+          grid.querySelectorAll('.btn-wl-page-del').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const id = btn.getAttribute('data-id');
+              const item = wl.find(i => i.id === id);
+              wl = wl.filter(i => i.id !== id);
+              localStorage.setItem('showoff_wishlist', JSON.stringify(wl));
+              if (window.showoffAnalytics && typeof window.showoffAnalytics.trackRemoveFromWishlist === 'function' && item) {
+                window.showoffAnalytics.trackRemoveFromWishlist(item);
+              }
+              renderWishlist();
+            });
+          });
+        }
+      }
+
+      renderWishlist();
+
+      if (btnClear) {
+        btnClear.addEventListener('click', function() {
+          if (confirm('Clear all items from your wishlist?')) {
+            wl = [];
+            localStorage.removeItem('showoff_wishlist');
+            renderWishlist();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+

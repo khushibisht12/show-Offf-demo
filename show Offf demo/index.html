@@ -1,0 +1,744 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SHOWOFFFF | Freedom Flash Sale - Trendy Online Fashion for Men & Women</title>
+
+  <meta name="description" content="Shop the SHOWOFFFF Freedom Flash Sale. Up to 70% OFF on trendy dresses, tops, co-ord sets, blazers, shirts & denim. Free shipping, 7-day easy returns & COD across India." />
+  <meta name="keywords" content="showoffff, freedom flash sale, women dresses, men fashion, co-ord sets, blazers, fast fashion india" />
+
+  <meta property="og:site_name" content="Showoffff" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SHOWOFFFF | Freedom Flash Sale - Min. 70% OFF" />
+  <meta property="og:description" content="Shop affordable, trendy fashion for men & women. Fast delivery | Easy returns | COD available." />
+  <meta property="og:image" content="https://showoffff.in/cdn/shop/files/Deskto.webp?v=1775717764&width=1200" />
+
+  <link rel="shortcut icon" href="https://showoffff.in/cdn/shop/files/Showoffff_Website_Favicon_3afb335c-9833-480b-ab42-551e0bce6af6_96x96.webp?v=1731308273" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="component.css" />
+    <script src="products-data.js"></script>
+  <script src="sfmc-sitemap-datalayer.js"></script>
+  <script type="text/javascript" src="//cdn.evgnet.com/beacon/a556rq555550mxe43n3n3n091568480/showoff/scripts/evergage.min.js"></script>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <div class="top-announcement-bar" id="top-announcement-bar">
+    <div class="marquee-content-wrap">
+      <span class="announcement-star">â˜…</span>
+      <span class="announcement-text">FLAT 50% OFF ON EVERYTHING | USE CODE: <strong>FLASH50</strong></span>
+      <span class="announcement-timer-badge" id="marquee-countdown">10:21:14</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. MAIN HEADER
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <!-- Left: Hamburger button -->
+      <button class="header-icon-btn hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Center: SHOWOFFFF Logo -->
+      <a href="index.html" class="brand-logo-wrap" aria-label="SHOWOFFFF Home">
+        <span class="brand-logo-text">SHOWOFFFF</span>
+      </a>
+
+      <!-- Right: User / Wishlist / Bag -->
+      <div class="header-right-actions">
+        <button class="header-icon-btn user-btn search-open-trigger" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button class="header-icon-btn user-btn" id="btn-account" aria-label="User account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <button class="header-icon-btn wishlist-open-trigger" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="header-count-badge wishlist-count-badge">0</span>
+        </button>
+
+        <button class="header-icon-btn cart-open-trigger" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="header-count-badge cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         3. CATEGORY NAVIGATION PILLS
+         ========================================================================= -->
+    <nav class="category-nav-bar" aria-label="Category Navigation">
+      <div class="category-pills-wrap">
+        <a href="women.html" class="nav-pill-btn is-active">FOR HER</a>
+        <a href="men.html" class="nav-pill-btn">FOR HIM</a>
+        <a href="curve.html" class="nav-pill-btn">CURVE</a>
+        <a href="top.html" class="nav-pill-btn">TOP</a>
+        <a href="bestsellers.html" class="nav-pill-btn">BEST SELLER</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         4. HERO BANNER SLIDER (SHOWOFFFF CAROUSEL)
+         ========================================================================= -->
+    <section class="hero-slider-section" id="hero-sale" aria-label="Hero Highlights">
+      <div class="hero-slider-viewport" id="hero-slider-viewport">
+        <div class="hero-slides-track" id="hero-slides-track">
+          
+          <!-- Slide 1: Freedom Flash Sale -->
+          <div class="hero-slide-item slide-flash-sale is-active" data-index="0">
+            <div class="hero-sale-inner">
+              <span class="hero-eyebrow">FREEDOM FLASH SALE</span>
+              <h1 class="hero-headline">MIN. 70% OFF</h1>
+              <span class="hero-subheadline">PRICES WILL RISE IN NEXT</span>
+
+              <!-- Live Countdown Boxes -->
+              <div class="countdown-timer-wrap">
+                <div class="timer-card">
+                  <span class="timer-num" id="hero-timer-hours">10</span>
+                  <span class="timer-unit">HOURS</span>
+                </div>
+                <span class="timer-sep">:</span>
+                <div class="timer-card">
+                  <span class="timer-num" id="hero-timer-mins">21</span>
+                  <span class="timer-unit">MINS</span>
+                </div>
+                <span class="timer-sep">:</span>
+                <div class="timer-card">
+                  <span class="timer-num" id="hero-timer-secs">14</span>
+                  <span class="timer-unit">SECS</span>
+                </div>
+              </div>
+
+              <!-- Orange CTA Lock Button -->
+              <a href="#hot-drops" class="hero-lock-cta-btn" id="btn-lock-price">
+                LOCK TODAY'S PRICE NOW! ðŸ”’
+              </a>
+
+              <!-- Gender Switcher Pills -->
+              <div class="hero-gender-toggle">
+                <button type="button" class="gender-pill-btn" id="btn-toggle-her">For Her</button>
+                <button type="button" class="gender-pill-btn is-selected" id="btn-toggle-him">For Him</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: New Drop / Trending Looks -->
+          <div class="hero-slide-item slide-fresh-drops" data-index="1">
+            <div class="hero-banner-content-box">
+              <span class="hero-slide-tag">NEW SEASON EDIT</span>
+              <h2 class="hero-slide-heading">RUNWAY TO REALITY '26</h2>
+              <p class="hero-slide-sub">500+ Runway-Inspired Dresses, Co-ord Sets & Street Chic Fits</p>
+              <div class="hero-slide-cta-row">
+                <a href="women.html" class="hero-slide-primary-btn">Shop Women's Drop âž”</a>
+                <a href="top.html" class="hero-slide-secondary-btn">Explore Top Picks</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Menswear & Resort Styling -->
+          <div class="hero-slide-item slide-menswear" data-index="2">
+            <div class="hero-banner-content-box">
+              <span class="hero-slide-tag" style="background:#1e3a8a; color:#fff;">MENSWEAR EDIT</span>
+              <h2 class="hero-slide-heading">ELEVATE YOUR EVERYDAY</h2>
+              <p class="hero-slide-sub">Botanical Resort Shirts, Structured Blazers & Stretch Denim up to 65% OFF</p>
+              <div class="hero-slide-cta-row">
+                <a href="men.html" class="hero-slide-primary-btn" style="background:#034ba9;">Shop For Him âž”</a>
+                <a href="bestsellers.html" class="hero-slide-secondary-btn">Bestseller Fits</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Curve & Plus Size Collection -->
+          <div class="hero-slide-item slide-curve" data-index="3">
+            <div class="hero-banner-content-box">
+              <span class="hero-slide-tag" style="background:#7c3aed; color:#fff;">SIZES 1XL TO 5XL</span>
+              <h2 class="hero-slide-heading">CONFIDENCE IN EVERY FIT</h2>
+              <p class="hero-slide-sub">Flattering silhouettes, ruched maxi dresses & comfortable everyday styling</p>
+              <div class="hero-slide-cta-row">
+                <a href="curve.html" class="hero-slide-primary-btn" style="background:#7c3aed;">Explore Curve âž”</a>
+                <a href="women.html?cat=Dresses" class="hero-slide-secondary-btn">Shop Dresses</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="hero-slider-arrow hero-slider-prev" id="hero-slider-prev" type="button" aria-label="Previous Slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="hero-slider-arrow hero-slider-next" id="hero-slider-next" type="button" aria-label="Next Slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="hero-slider-dots" id="hero-slider-dots">
+          <button class="hero-dot is-active" type="button" data-slide-to="0" aria-label="Slide 1"></button>
+          <button class="hero-dot" type="button" data-slide-to="1" aria-label="Slide 2"></button>
+          <button class="hero-dot" type="button" data-slide-to="2" aria-label="Slide 3"></button>
+          <button class="hero-dot" type="button" data-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. URGENCY ALERT RIBBON
+         ========================================================================= -->
+    <div class="urgency-alert-ribbon">
+      <span>Waiting could cost you <strong class="text-red">MORE</strong></span>
+    </div>
+
+    <!-- =========================================================================
+         6. OFFER COUPONS & VOUCHERS STRIP
+         ========================================================================= -->
+    <section class="coupons-voucher-strip" aria-label="Discount Coupons">
+      <div class="container voucher-container">
+        <div class="voucher-ticket-row">
+          <!-- Ticket 1: Prepaid Promo -->
+          <div class="voucher-ticket ticket-prepaid">
+            <div class="ticket-cutout cut-left"></div>
+            <div class="ticket-inner">
+              <span class="ticket-prepaid-title">UNLIMITED</span>
+              <span class="ticket-prepaid-sub">EXTRA SAVINGS</span>
+            </div>
+            <div class="ticket-cutout cut-right"></div>
+          </div>
+
+          <!-- Ticket 2: 15% OFF -->
+          <div class="voucher-ticket ticket-discount copy-coupon-trigger" data-code="EXTRA15" title="Click to copy EXTRA15">
+            <div class="ticket-cutout cut-left"></div>
+            <div class="ticket-inner">
+              <div class="ticket-discount-header">
+                <span class="ticket-extra-label">EXTRA</span>
+                <span class="ticket-percent-large">15% <small>OFF</small></span>
+              </div>
+              <span class="ticket-condition">ON ORDERS ABOVE â‚¹1999</span>
+              <span class="ticket-code-tag">USE: EXTRA15 âŽ˜</span>
+            </div>
+            <div class="ticket-cutout cut-right"></div>
+          </div>
+
+          <!-- Ticket 3: 10% OFF -->
+          <div class="voucher-ticket ticket-discount copy-coupon-trigger" data-code="EXTRA10" title="Click to copy EXTRA10">
+            <div class="ticket-cutout cut-left"></div>
+            <div class="ticket-inner">
+              <div class="ticket-discount-header">
+                <span class="ticket-extra-label">EXTRA</span>
+                <span class="ticket-percent-large">10% <small>OFF</small></span>
+              </div>
+              <span class="ticket-condition">ON ORDERS ABOVE â‚¹999</span>
+              <span class="ticket-code-tag">USE: EXTRA10 âŽ˜</span>
+            </div>
+            <div class="ticket-cutout cut-right"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. TRUST & VALUE PROPOSITIONS BAR
+         ========================================================================= -->
+    <section class="trust-features-bar">
+      <div class="container trust-container">
+        <div class="trust-feature-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#034ba9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <span class="trust-title">Free Shipping</span>
+        </div>
+
+        <div class="trust-feature-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#034ba9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <polyline points="23 20 23 14 17 14"></polyline>
+              <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+            </svg>
+          </div>
+          <span class="trust-title">Easy Returns</span>
+        </div>
+
+        <div class="trust-feature-item">
+          <div class="trust-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#034ba9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+              <circle cx="12" cy="15" r="2"></circle>
+            </svg>
+          </div>
+          <span class="trust-title">COD Available</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. COLLECTION SECTION (5-CARD ASYMMETRICAL GRID)
+         ========================================================================= -->
+    <section class="collection-section" id="collection-grid-sec">
+      <div class="container">
+        <div class="section-title-row">
+          <h2 class="section-heading-bold">COLLECTION</h2>
+          <a href="#shop-all" class="section-view-link" aria-label="View All Collections">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="asymmetric-collection-grid" id="asymmetric-collection-grid">
+          <!-- Rendered dynamically from PRODUCTS_DATA.collections -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. HOT DROPS THIS WEEK
+         ========================================================================= -->
+    <section class="hot-drops-section" id="hot-drops">
+      <div class="container">
+        <div class="hot-drops-header-wrap">
+          <span class="lime-badge-pill">JUST DROPPED</span>
+          <div class="hot-drops-title-row">
+            <h2 class="hot-drops-title">
+              <span class="icon-bolt">âš¡</span> HOT DROPS THIS WEEK
+            </h2>
+            <a href="#shop-all" class="view-all-link">VIEW ALL</a>
+          </div>
+        </div>
+
+        <div class="hot-drops-carousel-wrap">
+          <div class="hot-drops-grid" id="hot-drops-grid">
+            <!-- Product cards rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. OUR BESTSELLERS (4 LARGE TILES)
+         ========================================================================= -->
+    <section class="bestsellers-section" id="bestsellers">
+      <div class="container">
+        <div class="bestsellers-header-row">
+          <h2 class="section-heading-bold">OUR BESTSELLERS</h2>
+          <a href="#shop-all" class="view-all-link">VIEW ALL</a>
+        </div>
+
+        <div class="bestsellers-tiles-grid" id="bestsellers-tiles-grid">
+          <!-- Rendered dynamically from PRODUCTS_DATA.bestsellerTiles -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. CHECK OUR FASHION STORIES (REELS / VIDEO STORIES)
+         ========================================================================= -->
+    <section class="fashion-stories-section" id="fashion-stories">
+      <div class="container">
+        <div class="fashion-stories-header">
+          <h2 class="stories-heading">
+            Check Our Fashion <span class="text-blue">Stories</span>
+          </h2>
+        </div>
+
+        <div class="stories-carousel-grid" id="stories-carousel-grid">
+          <!-- Stories rendered dynamically from PRODUCTS_DATA.fashionStories -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         12. METRICS & SOCIAL PROOF BAR
+         ========================================================================= -->
+    <section class="metrics-counter-bar">
+      <div class="container metrics-container">
+        <div class="metric-stat-item">
+          <span class="metric-number">700K+</span>
+          <span class="metric-label">Happy Customers</span>
+        </div>
+        <div class="metric-stat-item">
+          <span class="metric-number">26K+</span>
+          <span class="metric-label">5-Star Reviews</span>
+        </div>
+        <div class="metric-stat-item">
+          <span class="metric-number">30+</span>
+          <span class="metric-label">Retail Outlets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         13. JOIN THE DROP LIST NEWSLETTER (LIME BANNER)
+         ========================================================================= -->
+    <section class="drop-list-newsletter-section">
+      <div class="container">
+        <div class="newsletter-box-inner">
+          <h2 class="newsletter-headline">JOIN THE DROP LIST</h2>
+          <p class="newsletter-sub">Be the first to know about new drops, flash sales & exclusive collabs.</p>
+          <form class="newsletter-subscribe-form" id="newsletter-form">
+            <input type="email" class="newsletter-email-input" id="newsletter-email" placeholder="Enter your email address..." required aria-label="Enter your email address" />
+            <button type="submit" class="newsletter-submit-btn">JOIN</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         14. SHOP ALL CATALOG / SEARCHABLE SECTION
+         ========================================================================= -->
+    <section id="shop-all" class="catalog-section">
+      <div class="container">
+        <div class="shop-toolbar">
+          <div class="toolbar-title-box">
+            <span class="eyebrow">Curated Collection</span>
+            <h2>Explore Everything</h2>
+          </div>
+          <div class="toolbar-actions">
+            <div class="sort-select-wrapper">
+              <label for="sort-select" class="sr-only">Sort by</label>
+              <select id="sort-select" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="discount">Biggest Discount</option>
+                <option value="rating">Top Rated</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-row" aria-label="Product category filters">
+          <button type="button" class="filter-btn is-active" data-category="All">All</button>
+          <button type="button" class="filter-btn" data-category="Dresses">Dresses</button>
+          <button type="button" class="filter-btn" data-category="Tops">Tops</button>
+          <button type="button" class="filter-btn" data-category="Co-ord Sets">Co-ord Sets</button>
+          <button type="button" class="filter-btn" data-category="Skirts">Skirts</button>
+          <button type="button" class="filter-btn" data-category="Shrugs">Shrugs</button>
+          <button type="button" class="filter-btn" data-category="Shirts">Shirts</button>
+        </div>
+
+        <div id="catalog-counter" class="catalog-counter">Showing 0 of 0 Products</div>
+        <div id="shop-all-grid" class="product-grid"></div>
+
+        <div id="load-more-wrap" class="load-more-wrap">
+          <button id="btn-load-more" class="btn-load-more" type="button">Load More Styles</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       15. RICH FOOTER & SEO CONTENT
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <!-- Col 1: Contact & Support -->
+        <div class="footer-col">
+          <h4 class="footer-heading">NEED HELP?</h4>
+          <ul class="footer-links-list">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="returns.html">Returns & Exchanges</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: About Us -->
+        <div class="footer-col">
+          <h4 class="footer-heading">ABOUT US</h4>
+          <ul class="footer-links-list">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#heritage">Heritage since 1994</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html#careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Policies -->
+        <div class="footer-col">
+          <h4 class="footer-heading">POLICIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="returns.html">Refund Policy</a></li>
+            <li><a href="faqs.html">Terms of Service</a></li>
+            <li><a href="faqs.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Categories -->
+        <div class="footer-col">
+          <h4 class="footer-heading">CATEGORIES</h4>
+          <ul class="footer-links-list">
+            <li><a href="women.html">Women's Collection</a></li>
+            <li><a href="men.html">Men's Collection</a></li>
+            <li><a href="curve.html">Curve & Plus Size</a></li>
+            <li><a href="top.html">Top Picks</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Support Info -->
+        <div class="footer-col footer-info-col">
+          <h4 class="footer-heading">GET IN TOUCH</h4>
+          <p class="footer-contact-text"><a href="mailto:customercare@showoffclothes.com">customercare@showoffclothes.com</a></p>
+          <p class="footer-contact-text"><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p class="footer-contact-sub">Mon - Sat | 10:00 AM - 7:00 PM IST</p>
+        </div>
+      </div>
+
+      <!-- SEO Collapsible Block -->
+      <div class="footer-seo-block">
+        <h3 class="seo-title">Buy Trendy Clothes Online | SHOWOFFFFÂ® - Affordable Fashion for Men & Women</h3>
+        <div class="seo-text-content" id="seo-text-content">
+          <p>SHOWOFFFF is Indiaâ€™s premier fast-fashion destination bringing runaway-inspired styles, chic dresses, versatile co-ord sets, tailored blazers, premium denim, and breathable knitwear directly to your doorstep. Designed with high quality, contemporary aesthetics, and everyday comfort in mind, our curated collections empower you to look and feel your best effortlessly.</p>
+          <p class="seo-extra-text" id="seo-extra-text">Enjoy fast pan-India express shipping, 7-day hassle-free returns and exchanges, cash on delivery (COD), and exclusive flash sales every week. Discover the freedom to dress bold with SHOWOFFFF.</p>
+        </div>
+        <button type="button" class="seo-toggle-btn" id="seo-toggle-btn">Read More</button>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-brand-wrap">
+          <span class="footer-brand-text">SHOWOFFFF</span>
+          <span class="footer-copyright">Â© 2026 Showoffff Retail India Pvt. Ltd. All rights reserved.</span>
+        </div>
+
+        <div class="footer-social-icons">
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.2 22 12z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       16. FLOATING TRUST BADGE & CHAT BUBBLE
+       ========================================================================= -->
+  <div class="floating-trust-pill">
+    <span class="trust-star">â˜…</span> <strong>4.8/5</strong> Rated on Google
+  </div>
+
+  <div class="floating-chat-bubble" id="floating-chat-bubble" title="Chat with support">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Customer Support" class="chat-agent-avatar" />
+    <span class="chat-online-dot"></span>
+  </div>
+
+  <!-- =========================================================================
+       17. DRAWERS & MODALS
+       ========================================================================= -->
+  <div id="app-backdrop" class="drawer-backdrop"></div>
+
+  <!-- Shopping Bag Drawer -->
+  <aside id="cart-drawer" class="drawer-panel cart-drawer" aria-label="Shopping bag">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Bag</h3>
+      <button id="cart-close-btn" class="drawer-close-btn" type="button" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="cart-shipping-banner">
+      <div id="shipping-progress-text" class="shipping-progress-text">Add <strong>â‚¹1499</strong> more for <strong>FREE SHIPPING</strong></div>
+      <div class="shipping-bar-track"><div id="shipping-bar-fill" class="shipping-bar-fill"></div></div>
+    </div>
+
+    <div id="cart-items-list" class="cart-items-container"></div>
+
+    <div id="cart-empty-state" class="cart-empty-state" style="display:none;">
+      <div class="empty-icon">ðŸ‘œ</div>
+      <h4 class="empty-heading">Your bag is empty</h4>
+      <p class="empty-desc">Add your favourite styles from the Freedom Flash Sale!</p>
+      <button type="button" class="primary-btn" data-dismiss-cart="true">Continue Shopping</button>
+    </div>
+
+    <div class="cart-footer">
+      <div class="coupon-box">
+        <input id="promo-input" type="text" placeholder="Enter coupon code (e.g. EXTRA15)" />
+        <button id="btn-apply-promo" type="button">Apply</button>
+      </div>
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">â‚¹0.00</strong>
+      </div>
+      <div id="cart-discount-row" class="cart-summary-row discount-row" style="display:none;">
+        <span>Discount</span>
+        <strong id="cart-discount-val">-â‚¹0.00</strong>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total</span>
+        <strong id="cart-total">â‚¹0.00</strong>
+      </div>
+      <button id="btn-checkout" type="button" class="checkout-btn">Proceed to Checkout âž”</button>
+    </div>
+  </aside>
+
+  <!-- Wishlist Drawer -->
+  <aside id="wishlist-drawer" class="drawer-panel wishlist-drawer" aria-label="Wishlist">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Wishlist</h3>
+      <button id="wishlist-close-btn" class="drawer-close-btn" type="button" aria-label="Close wishlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div id="wishlist-items-list" class="cart-items-container"></div>
+    <div id="wishlist-empty-state" class="cart-empty-state" style="display:none;">
+      <div class="empty-icon">ðŸ’—</div>
+      <h4 class="empty-heading">Your wishlist is empty</h4>
+      <p class="empty-desc">Save the looks you love and shop them anytime.</p>
+    </div>
+  </aside>
+
+  <!-- Mobile Nav Drawer -->
+  <aside id="mobile-nav-drawer" class="drawer-panel mobile-nav-drawer" aria-label="Mobile navigation">
+    <div class="drawer-header">
+      <h3 class="drawer-title">SHOWOFFFF</h3>
+      <button id="mobile-nav-close-btn" class="drawer-close-btn" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="mobile-nav-menu">
+      <a href="index.html">Home ðŸ”¥</a>
+      <a href="women.html">For Her</a>
+      <a href="men.html">For Him</a>
+      <a href="curve.html">Curve & Plus Size</a>
+      <a href="top.html">Top Picks</a>
+      <a href="bestsellers.html">Bestsellers</a>
+      <a href="wishlist.html">Wishlist â¤ï¸</a>
+      <a href="cart.html">Shopping Bag ðŸ›ï¸</a>
+      <a href="track-order.html">Track My Order</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Support</a>
+    </nav>
+  </aside>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="search-modal" aria-label="Product search">
+    <div class="search-modal-inner">
+      <div class="search-modal-top">
+        <h3>Search Showoffff</h3>
+        <button id="search-modal-close-btn" class="drawer-close-btn" type="button" aria-label="Close search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="search-modal-input-wrap">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input id="search-modal-input" class="search-modal-input" type="search" placeholder="Search dresses, tops, co-ords, jackets..." />
+      </div>
+      <div id="search-results-grid" class="search-results-grid"></div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div id="quick-view-modal" class="quick-view-modal" aria-label="Quick product view">
+    <div class="quick-view-modal-inner">
+      <button id="quick-view-close-btn" class="drawer-close-btn quick-view-close" type="button" aria-label="Close quick view">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="quick-view-media">
+        <img id="modal-main-img" src="" alt="Product preview" />
+        <div id="modal-thumbs-row" class="modal-thumbs-row"></div>
+      </div>
+
+      <div class="quick-view-content">
+        <span class="eyebrow">Flash Sale Special</span>
+        <h3 id="modal-title">Product Title</h3>
+        <div class="modal-price-row">
+          <span id="modal-sale-price" class="modal-sale-price">â‚¹0.00</span>
+          <span id="modal-reg-price" class="modal-reg-price">â‚¹0.00</span>
+          <span id="modal-discount" class="modal-discount">64% OFF</span>
+        </div>
+        <div class="modal-sizes-wrap">
+          <span>Select Size</span>
+          <div id="modal-sizes-list" class="modal-sizes-list"></div>
+        </div>
+        <p id="modal-desc" class="modal-desc"></p>
+        <button id="modal-add-atc-btn" class="primary-btn modal-add-btn" type="button">Add to Bag ðŸ›ï¸</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story Video Player Modal -->
+  <div id="story-modal" class="story-modal" aria-label="Fashion Story View">
+    <div class="story-modal-inner">
+      <button id="story-modal-close-btn" class="story-close-btn" type="button" aria-label="Close story">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="story-video-container">
+        <video id="story-video-player" loop playsinline autoplay muted></video>
+        <div class="story-overlay-header">
+          <img id="story-modal-avatar" src="" alt="Creator avatar" class="story-modal-avatar" />
+          <span id="story-modal-creator" class="story-modal-creator">@creator</span>
+        </div>
+        <div class="story-overlay-footer">
+          <p id="story-modal-caption" class="story-modal-caption"></p>
+          <div class="story-tagged-product">
+            <div class="tagged-prod-info">
+              <strong id="story-modal-prod-name">Product Name</strong>
+              <span id="story-modal-prod-price">â‚¹999.00</span>
+            </div>
+            <button type="button" class="btn-story-buy" id="btn-story-buy">Shop Look</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
